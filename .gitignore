@@ -1,0 +1,10 @@
+# Ignore node_modules directory
+node_modules
+
+# Ignore log files
+*.log
+
+# Ignore any generated files
+dist/
+build/
+coverage/
