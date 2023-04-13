@@ -5,6 +5,10 @@
     font-family: atkinson;
 }
 
+a {
+    text-decoration: none;
+}
+
 @font-face {
     font-family: atkinson;
     src: url(/[Fonts]/AtkinsonHyperlegible-Regular.ttf);
@@ -13,8 +17,16 @@
 :root {
     --body-bg: black;
     --tomato: #CC2F46;
+    --green: #004D55;
+    --light-brown: #b49c8c;
+    --brown: #87604f;
+    --brown-clear: rgba(82, 48, 36, 0.5);
 }
 
+/*Give space for navbar*/
+body {
+    padding-top: 70px;
+}
 /*Class to stop body scroll*/
 body.stop {
     overflow: hidden;
@@ -27,6 +39,7 @@ body.stop {
     left: 0;
     width: 100%;
     max-height: 100vh;
+    background-color: var(--brown);
 }
 
 .navbar-box {
