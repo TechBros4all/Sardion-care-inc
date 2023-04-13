@@ -5,13 +5,6 @@
     font-family: atkinson;
 }
 
-body{
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    scroll-behavior: smooth;
-}
-
 a {
     text-decoration: none;
 }
@@ -33,11 +26,62 @@ a {
 /*Give space for navbar*/
 body {
     padding-top: 70px;
+    padding-bottom: 60vh;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    scroll-behavior: smooth;
 }
 
 /*Class to stop body scroll*/
 body.stop {
     overflow: hidden;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+/*Space*/
+.space {
+    width: 100%;
+    height: 80px;
+}
+
+/*Header Styles*/
+.head {
+    position: relative;
+    width: 100%;
+    color: white;
+    font-size: 25px;
+}
+
+.head::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 80px;
+    height: 6px;
+    background-color: var(--light-brown);
+}
+
+.head h1 {
+    margin-bottom: 20px;
+}
+
+.head p {
+    font-size: 20px;
+}
+
+/*Page Padding*/
+.page {
+    padding: 100px 40px 50px;
+}
+
+/*highlight colors*/
+.highlight {
+    color: var(--green);
 }
 
 /*Navbar Styles*/
@@ -48,6 +92,7 @@ body.stop {
     width: 100%;
     max-height: 100vh;
     background-color: var(--brown);
+    z-index: 10;
 }
 
 .navbar-box {
@@ -58,8 +103,13 @@ body.stop {
     justify-content: space-between;
 }
 
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
 .navbar-logo img {
-    height: 100%;
+    height: 70%;
     object-fit: cover;
 }
 
@@ -131,56 +181,93 @@ body.stop {
 
 /* Contact */
 .contact-holder {
-    height: 100vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 60vh;
     width: 100%;
-    background: url(/images/contact-bg.jpg) top center no-repeat;
+    background: url(/images/contact-bg.jpg) no-repeat;
     background-attachment: fixed;
+    z-index: 1;
 }
 
 .contact-overlay {
-    height: 100vh;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    padding-top: 20vh;
-}
-
-.contact-form {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    color: rgb(250, 238, 216);
-    text-align: center;
-    backdrop-filter: blur(6px);
-    width: 80%;
-    height: auto;
-    margin: auto;
-}
-
-.contact-text-header {
-    font-size: 30px;
-    color: white;
-    width: 250px;
-    margin-left: 30%;
-    margin-bottom: 20px;
-}
-
-.contact-text-header::before {
-    display: block;
-    content: "";
-    width: 80px;
-    height: 6px;
-    background-color: var(--light-brown);
-}
-
-.contact-info {
-    max-width: 260px;
-    margin: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
 }
 
-.contact-info i {
-    font-size: 1.5rem;
-    color: #87604f;
+.contact {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.contact-right,
+.contact-left {
+    width: 50%;
+}
+
+.contact-left {
+    padding-right: 20px;
+}
+
+.contact-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-img {
+    overflow: hidden;
+}
+
+.contact-img img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.contact h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.contact-left a {
+    margin-top: 20px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--tomato);
+    color: white;
+    border-radius: 10px;
+}
+
+.contact-brands {
+    min-width: 50%;
+}
+
+.contact-brands a {
+    color: var(--light-brown);
+    margin: 30px 0;
+    display: block;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.contact-brands a:active,
+.contact-brands a:hover,
+.contact-brands a:visited {
+    color: white;
+}
+
+.contact-brands i {
+    margin-right: 14px;
 }

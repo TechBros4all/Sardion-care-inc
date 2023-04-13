@@ -75,10 +75,43 @@ body {
 
 .about {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: var(--brown);
 }
 
+.about-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-left,
+.about-right {
+    width: 50%;
+}
+
+.about-left {
+    padding-right: 10%;
+}
+
+.about-img {
+    margin: auto;
+    width: 80%;
+}
+
+.abt-img {
+    width: 100%;
+    border-top-right-radius: 60px;
+}
+
+.abt-img:nth-of-type(2) {
+    border-top-left-radius: 60px;
+}
+
+
+.testimonies {
+    background-color: var(--green);
+}
 
 
 /*Queries for landing page alone*/
@@ -99,6 +132,10 @@ body {
 @media (max-width: 800px) {
     .hero-text {
         width: 100%;
+    }
+
+    .hero {
+        background-position: center;
     }
 }
 

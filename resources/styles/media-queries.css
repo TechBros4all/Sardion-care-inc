@@ -6,4 +6,42 @@
     .navbar-collapse {
         display: flex;
     }
+
+    .contact h3 {
+        font-size: 20px;
+    }
+
+    .contact p {
+        font-size: 13px;
+    }
+
+    .contact-brands a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .contact {
+        padding-top: 20px;
+        width: 90%;
+        display: block;
+    }
+
+    .contact-right,
+    .contact-left {
+        width: 100%;
+    }
+
+    .contact-img img {
+        width: 140px;
+    }
+
+    .contact h3 {
+        margin-top: 10px;   
+    }
+
+    .contact-left a {
+        margin-top: 10px;
+        padding: 6px;
+    }
 }
