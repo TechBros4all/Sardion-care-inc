@@ -1,0 +1,9 @@
+@media (max-width: 800px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-collapse {
+        display: flex;
+    }
+}
