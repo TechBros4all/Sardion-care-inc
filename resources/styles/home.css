@@ -27,6 +27,7 @@ body {
     height: 100%;
     background-color: var(--brown-clear);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     color: white;
 }
 
@@ -104,7 +105,8 @@ body {
     border-top-right-radius: 60px;
 }
 
-.abt-img:nth-of-type(2) {
+.abt-img2 {
+    width: 100%;
     border-top-left-radius: 60px;
 }
 
