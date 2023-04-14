@@ -137,8 +137,31 @@ body {
     line-height: 2;
 }
 
-.testimonies {
+.services {
     background-color: var(--green);
+}
+
+.services-box {
+    margin-top: 60px;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.services-box::-webkit-scrollbar {
+    display: none;
+}
+
+.services-slider {
+    height: 400px;
+    display: flex;
+    gap: 20px;
+    background-color: antiquewhite;
+}
+
+.service {
+    height: 100%;
+    background-color: aquamarine;
 }
 
 
@@ -179,7 +202,7 @@ body {
     .about-img {
         width: 90%;
     }
-    
+
     .believes li {
         font-size: 15px;
     }
