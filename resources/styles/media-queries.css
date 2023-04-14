@@ -1,4 +1,12 @@
 @media (max-width: 800px) {
+    .head {
+        font-size: 20px;
+    }
+
+    .head::before {
+        width: 70px;
+    }
+
     .navbar-links {
         display: none;
     }

@@ -95,21 +95,40 @@ body {
     padding-right: 10%;
 }
 
+.about-hidden {
+    display: none;
+}
+
 .about-img {
     margin: auto;
     width: 80%;
 }
 
-.abt-img {
+.about-img img {
     width: 100%;
-    border-top-right-radius: 60px;
 }
 
-.abt-img2 {
-    width: 100%;
+#abt-img-1 {
+    border-top-right-radius: 30px;
+}
+
+#abt-img-2 {
+    border-top-left-radius: 30px;
+}
+
+.believes {
+    background-color: black;
+    color: white;
+}
+
+.abt-img:nth-of-type(2) {
     border-top-left-radius: 60px;
 }
 
+.believes li {
+    font-size: 20px;
+    line-height: 2;
+}
 
 .testimonies {
     background-color: var(--green);
@@ -131,6 +150,12 @@ body {
     }
 }
 
+@media (max-width: 1000px) {
+    .head p {
+        font-size: 16px;
+    }
+}
+
 @media (max-width: 800px) {
     .hero-text {
         width: 100%;
@@ -138,6 +163,39 @@ body {
 
     .hero {
         background-position: center;
+    }
+
+    .about-left {
+        padding-right: 10px;
+    }
+
+    .about-img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-box {
+        display: block;
+    }
+
+    .about-hide {
+        display: none;
+    }
+
+    .about-left,
+    .about-right {
+        padding-right: 0;
+        margin: 30px 0;
+        width: 100%;
+    }
+
+    .about-hidden {
+        display: block;
+    }
+
+    .space {
+        height: 30px;
     }
 }
 
