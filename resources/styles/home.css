@@ -141,10 +141,24 @@ body {
     background-color: var(--green);
 }
 
-.services-box {
+.services-holder {
+    padding: 0 10px;
+    position: relative;
     margin-top: 60px;
+}
+
+.services-box {
+    position: relative;
     width: 100%;
-    overflow-y: hidden;
+    height: 400px;
+    overflow: hidden;
+}
+
+.services-holder.mobile {
+    padding: 0;
+}
+
+.services-holder.mobile .services-box {
     overflow-x: scroll;
 }
 
@@ -152,16 +166,88 @@ body {
     display: none;
 }
 
+.services-next,
+.services-back {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    z-index: 5;
+    font-size: 23px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.services-back {
+    left: -30px;
+}
+
+.services-next {
+    right: -30px;
+}
+
+.services-next:hover,
+.services-back:hover {
+    color: var(--light-brown);
+}
+
+.services-next.off,
+.services-back.off {
+    display: none;
+}
+
 .services-slider {
-    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     display: flex;
     gap: 20px;
-    background-color: antiquewhite;
+    transition: 0.5s;
 }
 
 .service {
+    position: relative;
     height: 100%;
-    background-color: aquamarine;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    overflow: hidden;
+}
+
+.service img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(82, 48, 36, 0.6), rgba(0, 0, 0, 0.5));
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-text {
+    width: 80%;
+}
+
+.service-text h1 {
+    margin-bottom: 20px;
+}
+
+.service-text p {
+    font-size: 15px;
 }
 
 
