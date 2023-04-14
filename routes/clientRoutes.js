@@ -15,7 +15,7 @@ router.get("/join", (req, res) => {
 })
 
 router.get("/contact", (req, res) => {
-    res.render("contact")
+    res.render("contact-us")
 })
 
 module.exports = router;
