@@ -271,3 +271,17 @@ body.stop {
 .contact-brands i {
     margin-right: 14px;
 }
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--brown);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brown-clear);
+}
+/* scrollbar */
