@@ -5,7 +5,7 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh + 50px);
     background: url(/images/hero.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -117,7 +117,14 @@ body {
 
 .believes {
     background-color: black;
+    background: url(/images/believes.jpg) no-repeat;
+    background-attachment: fixed;
     color: white;
+}
+
+.believes-overlay {
+    width: 100%;
+    background: linear-gradient(135deg, black, rgba(0, 0, 0, 0.5), black);
 }
 
 .believes ul {
@@ -171,6 +178,10 @@ body {
 
     .about-img {
         width: 90%;
+    }
+    
+    .believes li {
+        font-size: 15px;
     }
 }
 
