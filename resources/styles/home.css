@@ -27,7 +27,6 @@ body {
     height: 100%;
     background-color: var(--brown-clear);
     backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     color: white;
 }
 
@@ -121,8 +120,9 @@ body {
     color: white;
 }
 
-.abt-img:nth-of-type(2) {
-    border-top-left-radius: 60px;
+.believes ul {
+    list-style-type: disc;
+    list-style-position: inside;
 }
 
 .believes li {
