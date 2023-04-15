@@ -94,16 +94,18 @@ body.stop {
     left: 0;
     width: 100%;
     max-height: 100vh;
-    background-color: var(--brown);
+    background-color: transparent;
     z-index: 10;
 }
 
 .navbar-box {
+    padding: 0 5%;
     margin: auto;
-    width: 90%;
+    width: 100%;
     height: 70px;
     display: flex;
     justify-content: space-between;
+    background-color: var(--brown);
 }
 
 .navbar-logo {
@@ -144,6 +146,71 @@ body.stop {
     font-size: 20px;
     border: none;
     color: white;
+    cursor: pointer;
+}
+
+.navbar-overlay {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+.navbar-overlay.on {
+    height: calc(100vh - 70px);
+}
+
+.navbar-overlay.dark {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.page-menus {
+    padding: 13px 20px;
+    position: absolute;
+    top: 20px;
+    right: 1%;
+    opacity: 0;
+    background-color: var(--brown-clear);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 0.5s;
+}
+
+.page-menus a {
+    padding: 8px 5px;
+    margin: 3px 0;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    border-bottom: 2px solid transparent;
+    border-radius: 2px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.page-menus a:hover {
+    color: var(--tomato);
+    border-bottom: 2px solid var(--tomato);
+}
+
+.page-menus i {
+    margin-left: 30px;
+}
+
+.page-menus.off {
+    display: none;
+}
+
+.page-menus.on {
+    right: 5%;
+    opacity: 1;
+}
+
+.page-menus.on a {
+    opacity: 1;
 }
 
 .navbar-collapse {
@@ -158,12 +225,17 @@ body.stop {
 }
 
 .navbar-collapsable {
-    width: 100%;
-    display: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
     padding: 5%;
-    background-color: white;
-    border-top: 4px solid var(--tomato);
+    background-color: var(--brown-clear);
+    border-radius: 30px;
     overflow: hidden;
+    opacity: 0;
+    transition: 0.5s;
 }
 
 .navbar-collapsable-links {
@@ -177,16 +249,41 @@ body.stop {
     text-decoration: none;
     width: 100%;
     display: flex;
-    justify-content: center;
-    color: black;
+    justify-content: space-between;
+    color: white;
     font-weight: 700;
 }
 
-.navbar-collapsable.active {
-    display: block;
+.navbar-collapsable-page-links {
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid var(--light-brown);
 }
 
-.navbar-collapsable.active .navbar-collapsable-links {
+.navbar-collapsable-page-links p {
+    padding: 10px;
+    color: white;
+}
+
+.navbar-collapsable-page-links a {
+    margin: 0;
+    display: inline-flex;
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+    /* background-color: var(--tomato); */
+}
+
+.navbar-collapsable.on {
+    opacity: 1;
+}
+
+.navbar-collapsable.off {
+    display: none;
+}
+
+.navbar-collapsable.on .navbar-collapsable-links {
     opacity: 1;
 }
 
