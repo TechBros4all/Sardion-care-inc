@@ -9,6 +9,10 @@ a {
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: atkinson;
     src: url(/[Fonts]/AtkinsonHyperlegible-Regular.ttf);
@@ -30,7 +34,6 @@ body {
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
-    scroll-behavior: smooth;
 }
 
 /*Class to stop body scroll*/
@@ -120,7 +123,7 @@ body.stop {
 
 .navbar-links a {
     padding: 6px 10px;
-    margin: 0 15px;
+    margin: 0 10px;
     background-color: transparent;
     color: white;
     display: flex;
@@ -131,8 +134,16 @@ body.stop {
     transition: 0.3s;
 }
 
-.navbar-links a:hover {
+.navbar-links a.active {
     background-color: var(--tomato);
+}
+
+.navbar-links button {
+    padding: 0 10px;
+    background-color: transparent;
+    font-size: 20px;
+    border: none;
+    color: white;
 }
 
 .navbar-collapse {
