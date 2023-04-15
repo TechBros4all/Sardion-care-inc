@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,75 @@
     <link rel="shortcut icon" href="/images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="/FontAwesome/css/all.min.css">
     <link rel="stylesheet" href="/styles/common.css">
-    <!-- Add own css here -->
+    <link rel="stylesheet" href="/styles/join.css">
     <!-- <link rel="stylesheet" href="/styles/home.css"> -->
     <link rel="stylesheet" href="/styles/media-queries.css">
 </head>
+
 <body>
     <%- include('partials/nav') %>
-    <div class="content">
-        <!-- write code here -->
-    </div>
-    <%- include('partials/contact') %>
+        <div class="content">
+            <div class="join-content">
+                <div class="overlay">
+                    <div class="join-text">
+                        <h1>Join Us</h1>
+                        <p>At the heart of our mission is the belief that every child and young person deserves the
+                            comfort
+                            and security of a nurturing family and a safe home. We are dedicated to working towards this
+                            goal with unwavering commitment and compassion.</p>
+                    </div>
+                    <div class="join-form">
+                        <form action="submit.php" method="post" enctype="multipart/form-data">
+                            <div class="grid-item">
+                                <label for="first-name">First Name:</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+
+                            <div class="grid-item">
+                                <label for="last-name">Last Name:</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+
+                            <div class="grid-item">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="grid-item">
+                                <label for="phone">Phone:</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                            </div>
+
+                            <div class="grid-item">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                            </div>
+
+                            <div>
+                                <input type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="about page">
+                        <div class="about-box">
+                            <div class="about-left">
+                                <div class="head">
+                                    <h1>Thank You</h1>
+                                    <p>Joining us means you are taking an intentional action to make significant and impactful contributions towards our cause and goals that aligns with our values, vision and mission, thereby creating a meaningful difference in the world around you !</p>
+                                </div>
+                            </div>
+                            <div class="about-right">
+                                <div class="about-img">
+                                    <img src="/images/thanks.jpg" alt="" id="abt-img-1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('partials/contact') %>
 </body>
 <script src="/scripts/common.js"></script>
+
 </html>
