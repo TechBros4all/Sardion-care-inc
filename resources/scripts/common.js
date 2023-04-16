@@ -27,12 +27,14 @@ function addActiveClass() {
       if (links[index].classList.contains("active")) return;
       links.forEach((link) => link.classList.remove('active'));
       links[index].classList.add('active');
+      links[index + (links.length/2)].classList.add('active');
     }
 
     if ((document.body.offsetHeight - (window.innerHeight + window.pageYOffset)) <= threshold) {
       if (links[links.length - 1].classList.contains("active")) return;
       links.forEach((link) => link.classList.remove('active'));
       links[links.length - 1].classList.add('active');
+      links[(links.length/2) - 1].classList.add('active');
     }
   });
 }
@@ -51,7 +53,8 @@ navbarCollapseBtn.addEventListener("click", function () {
     pageMenus.classList.remove("off");
     //let body scroll
     document.body.classList.remove("stop")
-    //change icon
+    //change icons
+    pageMenuBtn.firstChild.classList.replace("fa-angle-down", "fa-angle-up")
     navbarCollapseBtn.classList.replace("fa-xmark", "fa-bars");
     //remove navbar
     navbarCollapsable.classList.remove("on");
@@ -63,18 +66,24 @@ navbarCollapseBtn.addEventListener("click", function () {
     pageMenus.classList.add("off");
     //stop body scroll
     document.body.classList.add("stop")
-    //change icon
+    //change icons
+    pageMenuBtn.firstChild.classList.replace("fa-angle-down", "fa-angle-up")
     navbarCollapseBtn.classList.replace("fa-bars", "fa-xmark");
     //show navbar
+    navbarCollapsable.classList.remove("off")
     navbarCollapsable.classList.add("on")
     navbarOverlay.classList.add("on", "dark");
   }
 })
 
 //toggle additional menu
-navbarOverlay.addEventListener("click", function () {
+navbarOverlay.addEventListener("click", function (e) {
+  if(!(e.target.classList.contains("navbar-overlay"))) return;
+  //let body scroll
+  document.body.classList.remove("stop")
   let children = this.querySelectorAll(`.navbar-overlay > div`);
   //change icon
+  pageMenuBtn.firstChild.classList.replace("fa-angle-down", "fa-angle-up")
   navbarCollapseBtn.classList.replace("fa-xmark", "fa-bars");
   for (let i = 0; i < children.length; i++) {
     children[i].classList.remove("on", "off");
@@ -93,6 +102,7 @@ pageMenuBtn.addEventListener("click", function () {
 
     icon.classList.replace("fa-angle-up", "fa-angle-down")
     navbarOverlay.classList.add("on");
+    pageMenus.classList.remove("off");
     pageMenus.classList.add("on");
   } else {
     //show other menus

@@ -4,11 +4,11 @@
             <img src="/images/shrunk-logo.png" alt="navbar-logo">
         </div>
         <div class="navbar-links">
-            <a>Home</a>
-            <a>About</a>
-            <a>Believes</a>
-            <a>Services</a>
-            <a>Contact Us</a>
+            <% if (navbarContents.length) { %>
+                <% for( let i = 0; i < navbarContents.length; i++ ) { %>
+                   <a><%= navbarContents[i] %></a>
+                <% } %>
+            <% } %>
             <button class="page-menu-btn"><i class="fa-solid fa-angle-up"></i></button>
         </div>
         <div class="navbar-collapse">
@@ -25,12 +25,12 @@
         <div class="navbar-collapsable">
             <div class="navbar-collapsable-links">
                 <div class="navbar-collapsable-page-links">
-                    <p>Current Page</p>
-                    <a>Home</a>
-                    <a>About</a>
-                    <a>Believes</a>
-                    <a>Services</a>
-                    <a>Contact Us</a>
+                    <% if (navbarContents?.length || 0) { %>
+                        <p>Current Page</p>
+                     <% for( let i = 0; i < navbarContents.length; i++ ) { %>
+                        <a><%= navbarContents[i] %></a>
+                     <% } %>
+                    <% } %>
                 </div>
                 <a href="/">Home <i class="fa-solid fa-house"></i></a>
                 <a href="/about">About <i class="fa-solid fa-address-card"></i></a>
