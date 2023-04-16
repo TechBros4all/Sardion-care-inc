@@ -10,44 +10,83 @@
     <link rel="stylesheet" href="/FontAwesome/css/all.min.css">
     <link rel="stylesheet" href="/styles/common.css">
     <link rel="stylesheet" href="/styles/join.css">
-    <!-- <link rel="stylesheet" href="/styles/home.css"> -->
     <link rel="stylesheet" href="/styles/media-queries.css">
 </head>
 
 <body>
     <%- include('partials/nav') %>
         <div class="content">
-            <div class="join-content">
+            <div class="hero" id="home">
+                <div class="hero-overlay">
+                    <div class="hero-text">
+                        <div class="hero-text-box">
+                            <h2>JOIN THE FORCE FOR FAMILIES</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="careers page" id="careers">
+                <div class="career-left">
+                    <div class="head">
+                        <h1>Careers</h1>
+                        <p>We have a passion for the children and youth who need us the most, and we are known across
+                            the
+                            country for our track record for helping them achieve success that lasts. And it's our
+                            dedicated
+                            counselors, social workers and other team members who make it all possible.
+                            <br><br>
+                            Join us and make a difference in the lives of as many children as we can reach, be apart of
+                            the change.
+                        </p>
+                    </div>
+                </div>
+                <div class="career-right">
+                    <div class="career-img">
+                        <img src="/images/career.jpg" alt="career">
+                    </div>
+                </div>
+            </div>
+            <div class="join-us page" id="join">
+                <div class="head">
+                    <h1>Join Us</h1>
+                    <p>At the heart of our mission is the belief that every child and young person deserves the
+                        comfort
+                        and security of a nurturing family and a safe home. We are dedicated to working towards this
+                        goal with unwavering commitment and compassion.</p>
+                </div>
+                <div class="join-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" id="first-name" name="first-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                        </div>
+                        <div class="form-group form-area">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message"></textarea>
+                        </div>
+                        <button>Submit</button>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="join-content">
                 <div class="overlay">
                     <div class="join-text">
                         <h1>Join Us</h1>
-                        <p>At the heart of our mission is the belief that every child and young person deserves the
-                            comfort
-                            and security of a nurturing family and a safe home. We are dedicated to working towards this
-                            goal with unwavering commitment and compassion.</p>
                     </div>
                     <div class="join-form">
                         <form action="submit.php" method="post" enctype="multipart/form-data">
-                            <div class="grid-item">
-                                <label for="first-name">First Name:</label>
-                                <input type="text" id="first-name" name="first-name" required>
-                            </div>
-
-                            <div class="grid-item">
-                                <label for="last-name">Last Name:</label>
-                                <input type="text" id="last-name" name="last-name" required>
-                            </div>
-
-                            <div class="grid-item">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-
-                            <div class="grid-item">
-                                <label for="phone">Phone:</label>
-                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-                            </div>
-
                             <div class="grid-item">
                                 <label for="message">Message:</label>
                                 <textarea id="message" name="message" rows="4" cols="50"></textarea>
@@ -74,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <%- include('partials/contact') %>
 </body>

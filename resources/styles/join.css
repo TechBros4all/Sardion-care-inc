@@ -1,13 +1,193 @@
-:root {
-    --body-bg: black;
-    --tomato: #CC2F46;
-    --green: #004D55;
-    --light-brown: #b49c8c;
-    --brown: #87604f;
-    --brown-clear: rgba(82, 48, 36, 0.5);
+.hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: url(/images/join-hero.jpg) center no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
 
-.join-content,
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    color: white;
+}
+
+.hero-text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 100px);
+}
+
+.hero-text h2 {
+    position: relative;
+    font-size: 47px;
+    margin-bottom: 10px;
+}
+
+.hero-text h2::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 80px;
+    height: 6px;
+    background-color: var(--light-brown);
+}
+
+.careers {
+    background-color: var(--brown);
+    display: flex;
+}
+
+.career-right,
+.career-left {
+    width: 50%;
+}
+
+.career-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.career-img {
+    width: 80%;
+}
+
+.career-img img {
+    width: 100%;
+    border-radius: 20px;
+    border-bottom-left-radius: 60px;
+}
+
+.join-us {
+    background-color: var(--green);
+}
+
+.join-form {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.join-form form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 45%;
+}
+
+.form-group label {
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    padding: 10px 2px 2px;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    border-radius: 3px;
+    border-bottom: 3px solid var(--light-brown);
+    font-size: 20px;
+    color: white;
+}
+
+.form-group textarea:focus,
+.form-group input:focus {
+    outline: none;
+}
+
+.form-group.form-area {
+    width: 100%;
+}
+
+.form-group textarea {
+    padding: 7px;
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 0;
+    border-bottom: 3px solid var(--light-brown);
+    font-size: 20px;
+    resize: none;
+    color: white;
+}
+
+.join-form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--tomato);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 1000px) {
+    .head p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 800px) {
+    .careers {
+        display: block;
+    }
+
+    .career-left,
+    .career-right {
+        width: 100%;
+    }
+
+    .career-right {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-form form {
+        display: block;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .hero-text-box {
+        width: 90%;
+    }
+
+    .hero-text h2 {
+        font-size: 38px;
+    }
+
+    .career-img {
+        width: 100%;
+    }
+}
+/* .join-content,
 .overlay {
     height: max-content;
 }
@@ -237,4 +417,4 @@ input[type="submit"]:hover {
     .head p{
         font-size: 12px;
     }
-}
+} */
