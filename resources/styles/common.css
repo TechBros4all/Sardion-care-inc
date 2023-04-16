@@ -34,6 +34,7 @@ body {
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+    background-color: black;
 }
 
 /*Class to stop body scroll*/

@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/about", (req, res) => {
-    let navbarContents = ["home", "about", "believes", "services", "contact us"];
+    let navbarContents = ["home", "about", "programs", "contact us"];
     res.render("about", { navbarContents })
 })
 

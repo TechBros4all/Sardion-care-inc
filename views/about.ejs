@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,66 @@
     <link rel="shortcut icon" href="/images/favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="/FontAwesome/css/all.min.css">
     <link rel="stylesheet" href="/styles/common.css">
-    <!-- Add own css here -->
-    <!-- <link rel="stylesheet" href="/styles/home.css"> -->
+    <link rel="stylesheet" href="/styles/about.css">
     <link rel="stylesheet" href="/styles/media-queries.css">
 </head>
+
 <body>
     <%- include('partials/nav') %>
-    <div class="content">
-        <!-- write code here -->
-    </div>
-    <%- include('partials/contact') %>
+        <div class="content">
+            <div class="hero" id="home">
+                <div class="hero-overlay">
+                    <div class="hero-text">
+                        <div class="hero-text-box">
+                            <h2>EVERY CHILD DESERVES TO REACH THEIR FULL POTENTIAL</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about page" id="about">
+                <div class="head">
+                    <h1>Overview</h1>
+                    <p><span class="highlight">Sardon Care</span> provides help for children and young people across the
+                        United States who face a wide range of emotional, mental and behavioral problems. We work to
+                        find solutions using proven treatment models that strengthen the child's family and support
+                        systems and dramatically improve their long-term success. <span class="highlight">Sardon
+                            Care</span> directly helps tens of thousands of young people and their families every year
+                        and increases our impact through partnerships and advocacy.</p>
+                </div>
+                <div class="space"></div>
+                <div class="head">
+                    <h1>Our Values</h1>
+                    <p>Our Child and Youth Group Homes provides an environment where children and youth are treated with
+                        respect and kindness and given absolute positive regard and opportunity to reach their full
+                        potential. We believe that it is important to work in conjunction with all the youth supports to
+                        best enable the youth to work towards the goal of family reunification or independent
+                        living.<br><br>We believe that cultural awareness and spiritual healing are crucial in helping
+                        children and youth to stabilize and realize their full potential.</p>
+                </div>
+            </div>
+            <div class="programs page" id="programs">
+                <div class="programs-left">
+                    <div class="head">
+                        <h1>Programs</h1>
+                        <p>When placing the children/youth in the programs, consideration is given to the age, stage of
+                            development and the desired outcomes for each client to ensure the correct programming is put in
+                            place for them. We adjust the program to meet the needs of the clients so as to ensure positive
+                            outcomes for the persons served.
+                            <br><br>
+                            The staff of HF resources provide prevention, early intervention and tertiary programs such as;
+                            Individual goal setting, Education, Recreation/Leisure, Life Skills, Health and Well Being,
+                            Family, Clinical Support, First Nations Programming, and Community Supports.</p>
+                    </div>
+                </div>
+                <div class="programs-right">
+                    <div class="programs-img">
+                        <img src="/images/programs.jpg" alt="programs">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('partials/contact') %>
 </body>
 <script src="/scripts/common.js"></script>
+
 </html>

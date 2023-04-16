@@ -273,14 +273,6 @@ body {
 }
 
 @media (max-width: 800px) {
-    .hero-text {
-        width: 100%;
-    }
-
-    .hero {
-        background-position: center;
-    }
-
     .about-left {
         padding-right: 10px;
     }
