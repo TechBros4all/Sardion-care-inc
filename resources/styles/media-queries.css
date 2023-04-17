@@ -70,6 +70,15 @@
     .navbar-collapsable {
         width: 92%;
     }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 15px;
+    }
+
+    .form-group textarea {
+        height: 100px;
+    }
 }
 
 @media (max-width: 400px) {

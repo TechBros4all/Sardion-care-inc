@@ -142,18 +142,19 @@ if (form) {
     })
   }
 
-  const formDataToJson = formData => {
+  const formDataToJson = (formData, subject) => {
     const entries = formData.entries();
-
     const dataObj = Array.from(entries).reduce((data, [key, value]) => {
       data[key] = value;
-      if (key === 'email') {
-        data._replyTo = value;
-      }
       return data;
     }, {});
 
-    return JSON.stringify(dataObj);
+    const data = {
+      subject,
+      ...dataObj
+    }
+
+    return JSON.stringify(data);
   };
 
   form.addEventListener("submit", function (e) {
@@ -161,6 +162,9 @@ if (form) {
       const url = "https://formspree.io/f/xzbqkbzv";
 
       e.preventDefault();
+
+      //get form subject
+      var subject = e.target.dataset.subject;
 
       formBtn.disabled = true;
       formBtn.innerHTML = "<span class='spinner'></span>";
@@ -173,10 +177,10 @@ if (form) {
       };
 
       const formData = new FormData(this);
-
+      
       fetch(url, {
         method: "POST",
-        body: formDataToJson(formData),
+        body: formDataToJson(formData, subject),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -203,7 +207,7 @@ if (form) {
           console.log(error)
         })
     } catch (err) {
-        formBtn.innerHTML = "Error"
+      formBtn.innerHTML = "Error"
     }
   })
 

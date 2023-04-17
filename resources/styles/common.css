@@ -88,6 +88,57 @@ body.stop {
     color: var(--green);
 }
 
+/*Form Styles*/
+.form-group {
+    margin-bottom: 20px;
+    width: 45%;
+}
+
+.form-group label {
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    padding: 10px 2px 2px;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    border-radius: 3px;
+    border-bottom: 3px solid;
+    border-color: var(--light-brown);
+    font-size: 20px;
+    color: white;
+}
+
+.form-group textarea:focus,
+.form-group input:focus {
+    outline: none;
+}
+
+.form-group textarea.is-invalid,
+.form-group input.is-invalid {
+    border-color: red;
+}
+
+.form-group.form-area {
+    width: 100%;
+}
+
+.form-group textarea {
+    padding: 7px;
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 0;
+    border-bottom: 3px solid var(--light-brown);
+    font-size: 20px;
+    resize: none;
+    color: white;
+}
+
 /*Spinner*/
 .spinner {
     display: inline-block;
