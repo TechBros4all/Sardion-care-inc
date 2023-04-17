@@ -366,7 +366,7 @@ body.stop {
     text-transform: capitalize;
 }
 
-.navbar-collapsable-links a.active {
+.navbar-collapsable-links a[href].active {
     color: var(--tomato);
 }
 
