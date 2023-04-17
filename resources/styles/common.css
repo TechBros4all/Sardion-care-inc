@@ -301,6 +301,11 @@ body.stop {
     border-bottom: 2px solid var(--tomato);
 }
 
+.page-menus a.active {
+    color: var(--tomato);
+    border-bottom: 2px solid var(--tomato);
+}
+
 .page-menus i {
     margin-left: 30px;
 }
@@ -359,6 +364,10 @@ body.stop {
     color: white;
     font-weight: 700;
     text-transform: capitalize;
+}
+
+.navbar-collapsable-links a.active {
+    color: var(--tomato);
 }
 
 .navbar-collapsable-page-links {

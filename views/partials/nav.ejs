@@ -17,25 +17,25 @@
     </div>
     <div class="navbar-overlay">
         <div class="page-menus">
-            <a href="/">Home <i class="fa-solid fa-house"></i></a>
-            <a href="/about">About <i class="fa-solid fa-address-card"></i></a>
-            <a href="/join">Join Us <i class="fa-solid fa-users"></i></a>
-            <a href="/contact">Contact Us <i class="fa-solid fa-comment"></i></a>
+            <a href="/" class="<%= page === 'home' ? 'active' : '' %>">Home <i class="fa-solid fa-house"></i></a>
+            <a href="/about" class="<%= page === 'about' ? 'active' : '' %>">About <i class="fa-solid fa-address-card"></i></a>
+            <a href="/join" class="<%= page === 'join' ? 'active' : '' %>">Join Us <i class="fa-solid fa-users"></i></a>
+            <a href="/contact" class="<%= page === 'contact' ? 'active' : '' %>">Contact Us <i class="fa-solid fa-comment"></i></a>
         </div>
         <div class="navbar-collapsable">
             <div class="navbar-collapsable-links">
                 <div class="navbar-collapsable-page-links">
-                    <% if (navbarContents?.length || 0) { %>
+                    <% if (navbarContents.length) { %>
                         <p>Current Page</p>
                      <% for( let i = 0; i < navbarContents.length; i++ ) { %>
                         <a><%= navbarContents[i] %></a>
                      <% } %>
                     <% } %>
                 </div>
-                <a href="/">Home <i class="fa-solid fa-house"></i></a>
-                <a href="/about">About <i class="fa-solid fa-address-card"></i></a>
-                <a href="/join">Join Us <i class="fa-solid fa-users"></i></a>
-                <a href="/contact">Contact Us <i class="fa-solid fa-comment"></i></a>
+                <a href="/" class="<%= page === 'home' ? 'active' : '' %>">Home <i class="fa-solid fa-house"></i></a>
+                <a href="/about" class="<%= page === 'about' ? 'active' : '' %>">About <i class="fa-solid fa-address-card"></i></a>
+                <a href="/join" class="<%= page === 'join' ? 'active' : '' %>">Join Us <i class="fa-solid fa-users"></i></a>
+                <a href="/contact" class="<%= page === 'contact' ? 'active' : '' %>">Contact Us <i class="fa-solid fa-comment"></i></a>
             </div>
         </div>
     </div>
