@@ -18,7 +18,7 @@ router.get("/join", (req, res) => {
 })
 
 router.get("/contact", (req, res) => {
-    let navbarContents = ["home", "contact us"];
+    let navbarContents = ["home", "reach out", "contact us"];
     res.render("contact-us", { navbarContents })
 })
 

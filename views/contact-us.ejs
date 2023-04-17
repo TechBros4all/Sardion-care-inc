@@ -10,54 +10,48 @@
     <link rel="stylesheet" href="/FontAwesome/css/all.min.css">
     <link rel="stylesheet" href="/styles/common.css">
     <link rel="stylesheet" href="/styles/contact.css">
-    <!-- <link rel="stylesheet" href="/styles/home.css"> -->
     <link rel="stylesheet" href="/styles/media-queries.css">
 </head>
 
 <body>
     <%- include('partials/nav') %>
-        <div class="content">
-            <div class="contact-content">
-                <div class="container">
-                    <div class="row">
-                        <h1>Contact Us</h1>
+        <%- include('partials/alert') %>
+            <div class="content">
+                <div class="hero" id="home">
+                    <div class="hero-overlay">
+                        <div class="hero-text">
+                            <div class="hero-text-box">
+                                <h2>WE'D LOVE TO HEAR FROM YOU.</h2>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <h4 style="text-align:center">We'd Love To Hear From You!</h4>
+                </div>
+                <div class="reachs page" id="reach">
+                    <div class="reach-left">
+                        <div class="reach-img">
+                            <img src="/images/reach-out.jpg" alt="reach">
+                        </div>
                     </div>
-                    <div class="row input-container">
-                        <div class="col-xs-12">
-                            <div class="styled-input wide">
-                                <input type="text" required />
-                                <label>Name</label>
-                            </div>
+                    <div class="reach-right">
+                        <div class="head">
+                            <h1>Reach Out</h1>
+                            <p>If you have any questions about our programs or services, please don't hesitate to reach
+                                out to us. Our team is here to provide you with the information and support you need to
+                                make an informed decision.
+                                <br><br>
+                                Please feel free to contact us with any questions or concerns you may have. We look
+                                forward to hearing from you.
+                            </p>
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="styled-input">
-                                <input type="text" required />
-                                <label>Email</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="styled-input" style="float:right;">
-                                <input type="text" required />
-                                <label>Phone Number</label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                            <div class="styled-input wide">
-                                <textarea required></textarea>
-                                <label>Message</label>
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                            <div class="btn-lrg submit-btn">Send Message</div>
+                    </div>
+                    <div class="reach-hidden">
+                        <div class="reach-img">
+                            <img src="/images/reach-out.jpg" alt="reach">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <%- include('partials/contact') %>
+            <%- include('partials/contact') %>
 </body>
 <script src="/scripts/common.js"></script>
 

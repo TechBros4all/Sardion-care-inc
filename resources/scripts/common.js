@@ -133,8 +133,8 @@ function delayAllFunc(val, num, end) {
 //Form Submit
 const form = document.getElementById("form-to-submit");
 if (form) {
-  const formBtn = document.getElementById("submit-form")
-  const formFields = form.querySelectorAll("input, textarea");
+  var formBtn = document.getElementById("submit-form")
+  var formFields = form.querySelectorAll("input, textarea");
 
   for (let i = 0; i < formFields.length; i++) {
     formFields[i].addEventListener("focus", function () {
@@ -157,51 +157,54 @@ if (form) {
   };
 
   form.addEventListener("submit", function (e) {
-    const url = "https://formspree.io/f/xzbqkbzv";
+    try {
+      const url = "https://formspree.io/f/xzbqkbzv";
 
-    e.preventDefault();
+      e.preventDefault();
 
-    formBtn.disabled = true;
-    formBtn.innerHTML = "<span class='spinner'></span>";
+      formBtn.disabled = true;
+      formBtn.innerHTML = "<span class='spinner'></span>";
 
-    if (validateForm()) {
-      attachAlert("Fill All Fields", "error");
-      formBtn.disabled = false;
-      formBtn.innerHTML = "Submit";
-      return
-    };
-
-    const formData = new FormData(this);
-
-    fetch(url, {
-      method: "POST",
-      body: formDataToJson(formData),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(res => res.json())
-      .then(response => {
-        if (response.ok) {
-          for (let i = 0; i < formFields.length; i++) {
-            formFields[i].value = "";
-          }
-          attachAlert("Message Sent Successfully");
-          formBtn.disabled = false;
-          formBtn.innerHTML = "Submit";
-        } else {
-          formBtn.disabled = false;
-          formBtn.innerHTML = "Submit";
-          attachAlert("Service Unavailable, try again", "error");
-        }
-      })
-      .catch(error => {
+      if (validateForm()) {
+        attachAlert("Fill All Fields", "error");
         formBtn.disabled = false;
         formBtn.innerHTML = "Submit";
-        attachAlert("Error Sending Message", "error");
-        console.log(error)
-      })
+        return
+      };
 
+      const formData = new FormData(this);
+
+      fetch(url, {
+        method: "POST",
+        body: formDataToJson(formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json())
+        .then(response => {
+          if (response.ok) {
+            for (let i = 0; i < formFields.length; i++) {
+              formFields[i].value = "";
+            }
+            attachAlert("Message Sent Successfully");
+            formBtn.disabled = false;
+            formBtn.innerHTML = "Submit";
+          } else {
+            formBtn.disabled = false;
+            formBtn.innerHTML = "Submit";
+            attachAlert("Service Unavailable, try again", "error");
+          }
+        })
+        .catch(error => {
+          formBtn.disabled = false;
+          formBtn.innerHTML = "Submit";
+          attachAlert("Error Sending Message", "error");
+          console.log(error)
+        })
+    } catch (err) {
+        formBtn.innerHTML = "Error"
+    }
   })
 
   function validateForm() {
