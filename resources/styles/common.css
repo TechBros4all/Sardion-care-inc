@@ -218,9 +218,12 @@ body.stop {
 
 .navbar-collapse {
     display: none;
+    width: 30px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
     font-size: 23px;
     color: white;
-    align-items: center;
 }
 
 .navbar-collapse i {
