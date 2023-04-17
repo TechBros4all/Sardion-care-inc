@@ -298,8 +298,7 @@ body.stop {
     left: 0;
     height: 60vh;
     width: 100%;
-    background: url(/images/contact-bg.jpg) no-repeat;
-    background-attachment: fixed;
+    background: url(/images/contact-bg.jpg) left no-repeat;
     z-index: 1;
 }
 
@@ -372,12 +371,6 @@ body.stop {
     display: block;
     font-size: 22px;
     cursor: pointer;
-}
-
-.contact-brands a:active,
-.contact-brands a:hover,
-.contact-brands a:visited {
-    color: white;
 }
 
 .contact-brands i {

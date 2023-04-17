@@ -8,6 +8,7 @@ body {
     height: calc(100vh + 50px);
     background: url(/images/hero.jpg) no-repeat;
     background-size: cover;
+    background-color: black;
     background-attachment: fixed;
     overflow: hidden;
 }
@@ -116,9 +117,9 @@ body {
 }
 
 .believes {
-    background-color: black;
     background: url(/images/believes.jpg) no-repeat;
     background-attachment: fixed;
+    background-color: black;
     color: white;
 }
 

@@ -5,6 +5,7 @@
     
     .hero {
         background-position: center;
+        background-attachment: initial;
     }
 
     .head {

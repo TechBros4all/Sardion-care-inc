@@ -4,6 +4,7 @@
     height: 70vh;
     background: url(/images/join-hero.jpg) center no-repeat;
     background-size: cover;
+    background-color: black;
     overflow: hidden;
 }
 
