@@ -130,4 +130,41 @@ function delayAllFunc(val, num, end) {
   }, 2000)
 }
 
+//Form
+function validateForm() {
+  let fields = document.querySelectorAll(".contact-inputs");
+  let isEmpty = false;
+  for (let i = 0; i < fields.length; i++) {
+      if (fields[i].value.length < 1) {
+          isEmpty = true;
+          fields[i].classList.add("is-invalid")
+      }
+  }
+
+  return isEmpty;
+}
+
+function attachAlert(msg, type) {
+  const alertBox = document.querySelector(".alert-box");
+  const alert = document.createElement("div");
+  const alertMsg = document.createElement("p");
+
+  alert.classList.add("alert");
+  if (type) alert.classList.add("error");
+  alertMsg.innerHTML = msg;
+  alert.appendChild(alertMsg);
+
+  alertBox.insertBefore(alert, alertBox.children[0]);
+
+  setTimeout(() => {
+      alert.classList.add("on");
+      setTimeout(() => {
+          alert.classList.remove("on");
+          setTimeout(() => {
+              alert.remove();
+          }, 500);
+      }, 3000);
+  }, 200);
+}
+
 window.addEventListener("scroll", addActiveClass)

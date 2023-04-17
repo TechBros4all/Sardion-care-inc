@@ -88,6 +88,56 @@ body.stop {
     color: var(--green);
 }
 
+/*Spinner*/
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
+
+/*Alert Box Styles*/
+.alert-box {
+    position: fixed;
+    top: 90px;
+    right: 50px;
+    max-width: calc(100% - 100px);
+    max-height: 50%;
+    z-index: 13;
+    overflow: hidden;
+}
+
+.alert {
+    margin: 10px 0;
+    padding: 15px 10px;
+    background-color: #a88e6a;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.alert.on {
+    opacity: 1;
+}
+
+.alert.error {
+    background-color: red;
+}
+
 /*Navbar Styles*/
 .navbar {
     position: fixed;
