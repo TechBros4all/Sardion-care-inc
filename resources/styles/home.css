@@ -282,6 +282,11 @@ body {
         width: 90%;
     }
 
+    .believes { 
+        background-position: left top;
+        background-attachment: initial;
+    }
+
     .believes li {
         font-size: 15px;
     }
