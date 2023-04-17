@@ -27,14 +27,14 @@ function addActiveClass() {
       if (links[index].classList.contains("active")) return;
       links.forEach((link) => link.classList.remove('active'));
       links[index].classList.add('active');
-      links[index + (links.length/2)].classList.add('active');
+      links[index + (links.length / 2)].classList.add('active');
     }
 
     if ((document.body.offsetHeight - (window.innerHeight + window.pageYOffset)) <= threshold) {
       if (links[links.length - 1].classList.contains("active")) return;
       links.forEach((link) => link.classList.remove('active'));
       links[links.length - 1].classList.add('active');
-      links[(links.length/2) - 1].classList.add('active');
+      links[(links.length / 2) - 1].classList.add('active');
     }
   });
 }
@@ -78,7 +78,7 @@ navbarCollapseBtn.addEventListener("click", function () {
 
 //toggle additional menu
 navbarOverlay.addEventListener("click", function (e) {
-  if(!(e.target.classList.contains("navbar-overlay"))) return;
+  if (!(e.target.classList.contains("navbar-overlay"))) return;
   //let body scroll
   document.body.classList.remove("stop")
   let children = this.querySelectorAll(`.navbar-overlay > div`);
@@ -130,41 +130,115 @@ function delayAllFunc(val, num, end) {
   }, 2000)
 }
 
-//Form
-function validateForm() {
-  let fields = document.querySelectorAll(".contact-inputs");
-  let isEmpty = false;
-  for (let i = 0; i < fields.length; i++) {
-      if (fields[i].value.length < 1) {
-          isEmpty = true;
-          fields[i].classList.add("is-invalid")
-      }
+//Form Submit
+const form = document.getElementById("form-to-submit");
+if (form) {
+  const formBtn = document.getElementById("submit-form")
+  const formFields = form.querySelectorAll("input, textarea");
+
+  for (let i = 0; i < formFields.length; i++) {
+    formFields[i].addEventListener("focus", function () {
+      if (this.classList.contains("is-invalid")) this.classList.remove("is-invalid")
+    })
   }
 
-  return isEmpty;
-}
+  const formDataToJson = formData => {
+    const entries = formData.entries();
 
-function attachAlert(msg, type) {
-  const alertBox = document.querySelector(".alert-box");
-  const alert = document.createElement("div");
-  const alertMsg = document.createElement("p");
+    const dataObj = Array.from(entries).reduce((data, [key, value]) => {
+      data[key] = value;
+      if (key === 'email') {
+        data._replyTo = value;
+      }
+      return data;
+    }, {});
 
-  alert.classList.add("alert");
-  if (type) alert.classList.add("error");
-  alertMsg.innerHTML = msg;
-  alert.appendChild(alertMsg);
+    return JSON.stringify(dataObj);
+  };
 
-  alertBox.insertBefore(alert, alertBox.children[0]);
+  form.addEventListener("submit", function (e) {
+    const url = "https://formspree.io/f/xzbqkbzv";
 
-  setTimeout(() => {
+    e.preventDefault();
+
+    formBtn.disabled = true;
+    formBtn.innerHTML = "<span class='spinner'></span>";
+
+    if (validateForm()) {
+      attachAlert("Fill All Fields", "error");
+      formBtn.disabled = false;
+      formBtn.innerHTML = "Submit";
+      return
+    };
+
+    const formData = new FormData(this);
+
+    fetch(url, {
+      method: "POST",
+      body: formDataToJson(formData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(response => {
+        if (response.ok) {
+          for (let i = 0; i < formFields.length; i++) {
+            formFields[i].value = "";
+          }
+          attachAlert("Message Sent Successfully");
+          formBtn.disabled = false;
+          formBtn.innerHTML = "Submit";
+        } else {
+          formBtn.disabled = false;
+          formBtn.innerHTML = "Submit";
+          attachAlert("Service Unavailable, try again", "error");
+        }
+      })
+      .catch(error => {
+        formBtn.disabled = false;
+        formBtn.innerHTML = "Submit";
+        attachAlert("Error Sending Message", "error");
+        console.log(error)
+      })
+
+  })
+
+  function validateForm() {
+    let isEmpty = false;
+    for (let i = 0; i < formFields.length; i++) {
+      if (formFields[i].value.length < 1) {
+        isEmpty = true;
+        formFields[i].classList.add("is-invalid")
+      }
+    }
+
+    return isEmpty;
+  }
+
+  function attachAlert(msg, type) {
+    const alertBox = document.querySelector(".alert-box");
+    const alert = document.createElement("div");
+    const alertMsg = document.createElement("p");
+
+    alert.classList.add("alert");
+    if (type) alert.classList.add("error");
+    alertMsg.innerHTML = msg;
+    alert.appendChild(alertMsg);
+
+    alertBox.insertBefore(alert, alertBox.children[0]);
+
+    setTimeout(() => {
       alert.classList.add("on");
       setTimeout(() => {
-          alert.classList.remove("on");
-          setTimeout(() => {
-              alert.remove();
-          }, 500);
+        alert.classList.remove("on");
+        setTimeout(() => {
+          alert.remove();
+        }, 500);
       }, 3000);
-  }, 200);
+    }, 200);
+  }
 }
+
 
 window.addEventListener("scroll", addActiveClass)

@@ -38,6 +38,11 @@
 }
 
 @media (max-width: 500px) {
+    .alert-box {
+        right: 20px;
+        max-width: calc(100% - 40px);
+    }
+    
     .contact {
         padding-top: 20px;
         width: 90%;

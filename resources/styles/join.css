@@ -106,7 +106,8 @@
     background-color: transparent;
     border: 0;
     border-radius: 3px;
-    border-bottom: 3px solid var(--light-brown);
+    border-bottom: 3px solid;
+    border-color: var(--light-brown);
     font-size: 20px;
     color: white;
 }
@@ -114,6 +115,11 @@
 .form-group textarea:focus,
 .form-group input:focus {
     outline: none;
+}
+
+.form-group textarea.is-invalid,
+.form-group input.is-invalid {
+    border-color: red;
 }
 
 .form-group.form-area {
