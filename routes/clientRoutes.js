@@ -3,23 +3,26 @@ const { Router } = require("express");
 const router = Router();
 
 router.get("/", (req, res) => {
-    let navbarContents = ["home", "about", "beliefs", "services", "contact us"];
+    let navbarContents = ["home", "about", "believes", "services", "contact us"];
     res.render("home", { navbarContents })
 })
 
 router.get("/about", (req, res) => {
     let navbarContents = ["home", "about", "programs", "contact us"];
-    res.render("about", { navbarContents })
+    let page = "about"
+    res.render("about", { navbarContents, page })
 })
 
 router.get("/join", (req, res) => {
     let navbarContents = ["home", "careers", "join us", "contact us"];
-    res.render("join-us", { navbarContents })
+    let page = "join"
+    res.render("join-us", { navbarContents, page })
 })
 
 router.get("/contact", (req, res) => {
     let navbarContents = ["home", "reach out", "contact us"];
-    res.render("contact-us", { navbarContents })
+    let page = "contact"
+    res.render("contact-us", { navbarContents, page })
 })
 
 module.exports = router;

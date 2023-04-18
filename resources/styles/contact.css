@@ -79,6 +79,33 @@
     border-bottom-right-radius: 60px;
 }
 
+.contact-form-box {
+    background-color: var(--green);
+}
+
+.contact-form {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.contact-form form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--tomato);
+    color: white;
+    cursor: pointer;
+}
+
+
 
 @media (max-width: 900px) {
     .head p {
@@ -107,6 +134,14 @@
 }
 
 @media (max-width: 500px) {
+    .join-form form {
+        display: block;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
     .reach-img {
         width: 100%;
     }
