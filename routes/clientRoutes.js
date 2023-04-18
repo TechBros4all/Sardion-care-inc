@@ -3,7 +3,7 @@ const { Router } = require("express");
 const router = Router();
 
 router.get("/", (req, res) => {
-    let navbarContents = ["home", "about", "believes", "services", "contact us"];
+    let navbarContents = ["home", "about", "beliefs", "services", "contact us"];
     res.render("home", { navbarContents })
 })
 
