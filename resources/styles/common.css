@@ -354,6 +354,24 @@ body.stop {
     z-index: 1;
 }
 
+.contact-made {
+    position: absolute;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: var(--brown); */
+}
+
+.contact-made p {
+    float: right;
+    color: rgb(201, 200, 200);
+}
+
+.contact-made a {
+    color: var(--light-brown);
+}
+
 .contact-overlay {
     display: flex;
     align-items: center;
@@ -396,8 +414,7 @@ body.stop {
 }
 
 .contact h3 {
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     font-size: 30px;
 }
 
