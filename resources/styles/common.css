@@ -354,6 +354,11 @@ body.stop {
     transition: 0.5s;
 }
 
+.navbar-collapsable-links p {
+    color: white;
+    margin-top: 10px;
+}
+
 .navbar-collapsable-links a {
     margin: 10px 0;
     padding: 10px 0;
