@@ -249,3 +249,16 @@ if (form) {
 
 
 window.addEventListener("scroll", addActiveClass)
+
+// scroll behavior alternative
+// Smooth scrolling with vanilla JavaScript
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//   anchor.addEventListener('click', function (e) {
+//       e.preventDefault();
+
+//       document.querySelector(this.getAttribute('href')).scrollIntoView({
+//           behavior: 'smooth'
+//       });
+//   });
+// });
+// test it
