@@ -294,6 +294,7 @@ body.stop {
     opacity: 0;
     text-transform: capitalize;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .page-menus a.active {

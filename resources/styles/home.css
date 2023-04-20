@@ -66,10 +66,14 @@ body {
     color: var(--light-brown);
     font-weight: 700;
     text-transform: uppercase;
+    border: none;
 }
 
 .hero-text a:hover {
     color: honeydew;
+    padding-left: 10px;
+    border-left: 1px solid honeydew;
+    transition: 1s;
 }
 
 .hero-slash {
