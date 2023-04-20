@@ -60,11 +60,16 @@ body {
 
 .hero-text a {
     margin-top: 30px;
-    display: block;
+    display: inline-flex;
+    width: auto;
     font-size: 27px;
     color: var(--light-brown);
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.hero-text a:hover {
+    color: honeydew;
 }
 
 .hero-slash {

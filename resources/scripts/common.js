@@ -2,7 +2,7 @@
 var links = document.querySelectorAll("a:not([href])");
 
 for (let i = 0; i < links.length; i++) {
-  links[i].addEventListener("click", () => {
+  links[i].addEventListener("click", (e) => {
     let name = links[i].innerHTML.toLowerCase().split(" ");
     if (name[0] == "contact") {
       document.documentElement.scrollTop = document.documentElement.scrollHeight;
@@ -54,7 +54,7 @@ navbarCollapseBtn.addEventListener("click", function () {
     //let body scroll
     document.body.classList.remove("stop")
     //change icons
-    pageMenuBtn.firstChild.classList.replace("fa-angle-down", "fa-angle-up")
+    pageMenuBtn.firstChild.classList.replace("fa-angle-up", "fa-angle-down")
     navbarCollapseBtn.classList.replace("fa-xmark", "fa-bars");
     //remove navbar
     navbarCollapsable.classList.remove("on");
@@ -67,7 +67,7 @@ navbarCollapseBtn.addEventListener("click", function () {
     //stop body scroll
     document.body.classList.add("stop")
     //change icons
-    pageMenuBtn.firstChild.classList.replace("fa-angle-down", "fa-angle-up")
+    pageMenuBtn.firstChild.classList.replace("fa-angle-up", "fa-angle-down")
     navbarCollapseBtn.classList.replace("fa-bars", "fa-xmark");
     //show navbar
     navbarCollapsable.classList.remove("off")
@@ -83,7 +83,7 @@ navbarOverlay.addEventListener("click", function (e) {
   document.body.classList.remove("stop")
   let children = this.querySelectorAll(`.navbar-overlay > div`);
   //change icon
-  pageMenuBtn.firstChild.classList.replace("fa-angle-down", "fa-angle-up")
+  pageMenuBtn.firstChild.classList.replace("fa-angle-up", "fa-angle-down")
   navbarCollapseBtn.classList.replace("fa-xmark", "fa-bars");
   for (let i = 0; i < children.length; i++) {
     children[i].classList.remove("on", "off");
@@ -96,11 +96,11 @@ navbarOverlay.addEventListener("click", function (e) {
 pageMenuBtn.addEventListener("click", function () {
   delayAllFunc(pageMenuLinks, 0.2);
   let icon = this.firstChild;
-  if (icon.classList.contains("fa-angle-up")) {
+  if (icon.classList.contains("fa-angle-down")) {
     //remove other menu
     navbarCollapsable.classList.add("off");
 
-    icon.classList.replace("fa-angle-up", "fa-angle-down")
+    icon.classList.replace("fa-angle-down", "fa-angle-up")
     navbarOverlay.classList.add("on");
     pageMenus.classList.remove("off");
     pageMenus.classList.add("on");
@@ -108,7 +108,7 @@ pageMenuBtn.addEventListener("click", function () {
     //show other menus
     navbarCollapsable.classList.remove("off");
 
-    icon.classList.replace("fa-angle-down", "fa-angle-up")
+    icon.classList.replace("fa-angle-up", "fa-angle-down",)
     pageMenus.classList.remove("on");
     setTimeout(() => {
       navbarOverlay.classList.remove("on");

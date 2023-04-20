@@ -4,12 +4,11 @@
             <img src="/images/shrunk-logo.png" alt="navbar-logo">
         </div>
         <div class="navbar-links">
-            <% if (navbarContents.length) { %>
-                <% for( let i = 0; i < navbarContents.length; i++ ) { %>
-                   <a><%= navbarContents[i] %></a>
-                <% } %>
-            <% } %>
-            <button class="page-menu-btn"><i class="fa-solid fa-angle-up"></i></button>
+            <a href="/" class="<%= page === 'home' ? 'active' : '' %>">Home</a>
+            <a href="/about" class="<%= page === 'about' ? 'active' : '' %>">About</a>
+            <a href="/join" class="<%= page === 'join' ? 'active' : '' %>">Join Us</a>
+            <a href="/contact" class="<%= page === 'contact' ? 'active' : '' %>">Contact Us</a>
+            <button class="page-menu-btn"><i class="fa-solid fa-angle-down"></i></button>
         </div>
         <div class="navbar-collapse">
             <i class="fa-solid fa-bars" id="navbar-collapse"></i>
@@ -17,10 +16,11 @@
     </div>
     <div class="navbar-overlay">
         <div class="page-menus">
-            <a href="/" class="<%= page === 'home' ? 'active' : '' %>">Home <i class="fa-solid fa-house"></i></a>
-            <a href="/about" class="<%= page === 'about' ? 'active' : '' %>">About <i class="fa-solid fa-address-card"></i></a>
-            <a href="/join" class="<%= page === 'join' ? 'active' : '' %>">Join Us <i class="fa-solid fa-users"></i></a>
-            <a href="/contact" class="<%= page === 'contact' ? 'active' : '' %>">Contact Us <i class="fa-solid fa-comment"></i></a>
+            <% if (navbarContents.length) { %>
+                <% for( let i = 0; i < navbarContents.length; i++ ) { %>
+                   <a><%= navbarContents[i] %> <i class="fa-solid fa-circle"></i></a>
+                <% } %>
+            <% } %>
         </div>
         <div class="navbar-collapsable">
             <div class="navbar-collapsable-links">

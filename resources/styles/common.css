@@ -236,7 +236,6 @@ body.stop {
     justify-content: center;
     text-decoration: none;
     border-radius: 5px;
-    text-transform: capitalize;
     cursor: pointer;
 }
 
@@ -293,12 +292,8 @@ body.stop {
     border-bottom: 2px solid transparent;
     border-radius: 2px;
     opacity: 0;
+    text-transform: capitalize;
     transition: 0.5s;
-}
-
-.page-menus a:hover {
-    color: var(--tomato);
-    border-bottom: 2px solid var(--tomato);
 }
 
 .page-menus a.active {
@@ -307,6 +302,9 @@ body.stop {
 }
 
 .page-menus i {
+    display: flex;
+    align-items: center;
+    font-size: 7px;
     margin-left: 30px;
 }
 
@@ -486,7 +484,7 @@ body.stop {
 .contact-left a {
     margin-top: 20px;
     width: 100px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
