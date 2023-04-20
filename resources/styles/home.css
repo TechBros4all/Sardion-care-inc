@@ -73,7 +73,11 @@ body {
     color: honeydew;
     padding-left: 10px;
     border-left: 1px solid honeydew;
-    transition: 1s;
+    transition: 0.5s ease-out;
+}
+
+.hero-text a:not(:hover) {
+    transition: 1s ease-in;
 }
 
 .hero-slash {
