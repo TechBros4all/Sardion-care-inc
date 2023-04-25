@@ -71,13 +71,14 @@ body {
 
 .hero-text a:hover {
     color: honeydew;
-    padding-left: 10px;
-    border-left: 1px solid honeydew;
+    padding-left: 5px;
+    border-left: 2px solid honeydew;
     transition: 0.5s ease-out;
+    border-radius: 1px;
 }
 
 .hero-text a:not(:hover) {
-    transition: 1s ease-in;
+    transition: 0.5s ease-in;
 }
 
 .hero-slash {
