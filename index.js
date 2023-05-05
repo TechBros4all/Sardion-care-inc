@@ -1,7 +1,7 @@
 const express = require("express");
 const clientRoutes = require("./routes/clientRoutes");
 const app = express();
-const port = 3000;
+var port = process.env.PORT || 3000;
 
 app.use(express.static("resources"))
 
