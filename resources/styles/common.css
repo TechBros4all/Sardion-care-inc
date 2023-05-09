@@ -85,7 +85,7 @@ body.stop {
 
 /*highlight colors*/
 .highlight {
-    color: var(--green);
+    color: rgb(26, 25, 25);
 }
 
 /*Form Styles*/
