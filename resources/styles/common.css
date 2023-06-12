@@ -85,7 +85,9 @@ body.stop {
 
 /*highlight colors*/
 .highlight {
-    color: rgb(26, 25, 25);
+    /* color: rgb(26, 25, 25); */
+    color: #eda89c;
+    font-weight: 700;
 }
 
 /*Form Styles*/

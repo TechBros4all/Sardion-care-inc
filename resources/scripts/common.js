@@ -177,7 +177,7 @@ if (form) {
       };
 
       const formData = new FormData(this);
-      
+
       fetch(url, {
         method: "POST",
         body: formDataToJson(formData, subject),
@@ -223,28 +223,28 @@ if (form) {
     return isEmpty;
   }
 
-  function attachAlert(msg, type) {
-    const alertBox = document.querySelector(".alert-box");
-    const alert = document.createElement("div");
-    const alertMsg = document.createElement("p");
+}
+function attachAlert(msg, type) {
+  const alertBox = document.querySelector(".alert-box");
+  const alert = document.createElement("div");
+  const alertMsg = document.createElement("p");
 
-    alert.classList.add("alert");
-    if (type) alert.classList.add("error");
-    alertMsg.innerHTML = msg;
-    alert.appendChild(alertMsg);
+  alert.classList.add("alert");
+  if (type) alert.classList.add("error");
+  alertMsg.innerHTML = msg;
+  alert.appendChild(alertMsg);
 
-    alertBox.insertBefore(alert, alertBox.children[0]);
+  alertBox.insertBefore(alert, alertBox.children[0]);
 
+  setTimeout(() => {
+    alert.classList.add("on");
     setTimeout(() => {
-      alert.classList.add("on");
+      alert.classList.remove("on");
       setTimeout(() => {
-        alert.classList.remove("on");
-        setTimeout(() => {
-          alert.remove();
-        }, 500);
-      }, 3000);
-    }, 200);
-  }
+        alert.remove();
+      }, 500);
+    }, 3000);
+  }, 200);
 }
 
 
