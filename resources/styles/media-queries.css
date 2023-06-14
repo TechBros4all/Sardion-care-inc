@@ -4,7 +4,7 @@
         -webkit-backdrop-filter: blur(0px);
         width: 100%;
     }
-    
+
     .hero {
         background-position: center;
         background-attachment: initial;
@@ -45,7 +45,7 @@
         right: 20px;
         max-width: calc(100% - 40px);
     }
-    
+
     .contact {
         padding-top: 20px;
         width: 90%;
@@ -62,14 +62,14 @@
     }
 
     .contact h3 {
-        margin-top: 10px;   
+        margin-top: 10px;
     }
 
     .contact-left a {
         margin-top: 10px;
         padding: 6px;
     }
-    
+
     .navbar-collapsable {
         width: 92%;
     }
@@ -84,10 +84,13 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 440px) {
     .page {
-        padding: 100px 15px 50px;
+        padding: 100px 18px 50px;
     }
+}
+
+@media (max-width: 400px) {
 
     .navbar-collapsable {
         padding: 20px;
