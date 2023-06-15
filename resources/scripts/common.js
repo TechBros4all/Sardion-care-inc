@@ -262,3 +262,18 @@ window.addEventListener("scroll", addActiveClass)
 //   });
 // });
 // test it
+
+document.addEventListener('DOMContentLoaded', function() {
+  var images = document.querySelectorAll('img');
+  for (var i = 0; i < images.length; i++) {
+    images[i].classList.add('blurry-image')
+    time(images[i])
+    };
+  }
+);
+
+function time(img) {
+  setTimeout(function() {
+    img.classList.remove('blurry-image');
+  }, 7000);
+}

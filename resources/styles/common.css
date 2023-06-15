@@ -332,7 +332,7 @@ body.stop {
     align-items: center;
     justify-content: center;
     font-size: 23px;
-    color: white;    
+    color: white;
     cursor: pointer;
 }
 
@@ -524,4 +524,11 @@ body.stop {
 ::-webkit-scrollbar-thumb {
     background: var(--brown-clear);
 }
+
 /* scrollbar */
+
+
+.blurry-image {
+    filter: blur(10px);
+    transition: 0.5s ease;
+}
