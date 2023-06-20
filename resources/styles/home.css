@@ -127,14 +127,22 @@ body {
 }
 
 .believes {
+    position: relative;
+    min-height: 50vh;
     background: url(/images/believes.jpg) no-repeat;
     background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     background-color: black;
     color: white;
 }
 
 .believes-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     background: linear-gradient(135deg, black, rgba(0, 0, 0, 0.5), black);
 }
 
@@ -295,7 +303,7 @@ body {
     }
 
     .believes {
-        background-position: left top;
+        background-position: center center;
         background-attachment: initial;
     }
 

@@ -247,6 +247,29 @@ function attachAlert(msg, type) {
   }, 200);
 }
 
+//Gallery Buttons
+const galleryBtns = document.querySelectorAll(".gallery-btn");
+
+if (galleryBtns) {
+  galleryBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const target = document.querySelector(`.${this.dataset?.target || undefined}`);
+      const icon = this.childNodes[0];
+
+      if (!target) return;
+
+      if (target.classList.contains("collapsed")) {
+        icon.classList.replace("fa-angle-down", "fa-angle-up")
+        target.classList.remove("collapsed")
+      }
+      else {
+        icon.classList.replace("fa-angle-up", "fa-angle-down");
+        target.classList.add("collapsed");
+      }
+    })
+  })
+}
+
 
 window.addEventListener("scroll", addActiveClass)
 

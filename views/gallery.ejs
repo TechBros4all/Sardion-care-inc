@@ -33,20 +33,32 @@
                 </div>
                 <div class="gallery-box">
                     <% if (images.length || videos.length) { %>
-                        <% images.forEach((image) => { %>
-                            <div class="gallery-img" onclick="">
-                                <div class="gallery-img-overlay"><%= image.split(".").shift() %></div>
-                                <img src="/gallery/<%= image %>" alt="Image">
-                            </div>
-                        <% }) %>
-                        <% videos.forEach((video) => { %>
-                              <div class="gallery-img">
+                        <div class="gallery-title">
+                            <h1>Images</h1>
+                            <button class="gallery-btn" data-target="gallery-images"><i class="fa-solid fa-angle-up"></i></button>
+                        </div>
+                        <div class="gallery-images">
+                            <% images.forEach((image) => { %>
+                                <div class="gallery-img" onclick="">
+                                    <div class="gallery-img-overlay"><%= image.split(".").shift() %></div>
+                                    <img src="/gallery/<%= image %>" alt="Image">
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="gallery-title">
+                            <h1>Videos</h1>
+                            <button class="gallery-btn" data-target="gallery-videos"><i class="fa-solid fa-angle-up"></i></button>
+                        </div>
+                       <div class="gallery-videos">
+                            <% videos.forEach((video) => { %>
+                                <div class="gallery-img">
                                 <video controls preload="metadata">
                                     <source src="/gallery/<%= video %>" type="video/mp4">
                                     Your browser does not support the video tag.
-                                  </video>
-                              </div>
-                        <% }) %>
+                                    </video>
+                                </div>
+                            <% }) %>
+                       </div>
                     <% } else { %>
                         <div class="no-gallery">
                             GALLERY SEEMS TO BE EMPTY
