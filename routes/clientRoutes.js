@@ -25,26 +25,37 @@ router.get("/gallery", (req, res) => {
     const galleryPath = path.join(__dirname, "..", 'resources/gallery');
 
     fs.readdir(galleryPath, (err, files) => {
-        const images = [];
-        const videos = [];
+        const allFiles = {};
 
         if (err) {
             console.error('Error reading gallery directory:', err);
-            return res.render("gallery", { navbarContents, page, videos, images })
+            return res.render("gallery", { navbarContents, page, allFiles })
         }
 
-        files.forEach((file) => {
-            const filePath = path.join(galleryPath, file);
-            const mimeType = mime.lookup(filePath);
+        //Valid file should follow this format; name-type-number(optional).extenxion.
+        //All invalid files will be logged to the console if any, but will be removed from the list
+        let validFiles = [];
+        let inValidFiles = [];
 
-            if (mimeType && mimeType.startsWith('image/')) {
-                images.push(file);
-            } else if (mimeType && mimeType.startsWith('video/')) {
-                videos.push(file);
-            }
-        });
+        //Separate the valid files from the invalid ones
+        files.forEach(file => (file.split("-").length > 1) ? validFiles.push(file) : inValidFiles.push(file))
 
-        res.render("gallery", { navbarContents, page, images, videos })
+        //Categorise the files
+        validFiles.forEach(file => {
+            const nameExt = file.split(".");
+            const ext = nameExt.pop();
+            const content = nameExt.join(".").split("-");
+
+            let type = content[1];
+
+            if(mime.lookup(path.join(galleryPath, file)).startsWith("video/")) file += '-vid';
+
+            (allFiles[type]) ? allFiles[type].push(file) : allFiles[type] = [file];
+        })
+
+        if(inValidFiles.length) console.log(`These files were removed when showing the gallery\n> ${inValidFiles.join("\n> ")}`);
+
+        res.render("gallery", { navbarContents, page, allFiles })
     });
 })
 

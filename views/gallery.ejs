@@ -32,33 +32,29 @@
                     <p>Here at <span class="highlight">Sardion Care</span> we provide our children with the necassary things for their enjoyment.<br>Why dont you take a look</p>
                 </div>
                 <div class="gallery-box">
-                    <% if (images.length || videos.length) { %>
-                        <div class="gallery-title">
-                            <h1>Images</h1>
-                            <button class="gallery-btn" data-target="gallery-images"><i class="fa-solid fa-angle-up"></i></button>
-                        </div>
-                        <div class="gallery-images">
-                            <% images.forEach((image) => { %>
+                    <% if (Object.keys(allFiles).length > 0) { %>
+                        <% for( const key in allFiles ) { %>
+                            <div class="gallery-title">
+                                <h1><%= key %></h1>
+                                <button class="gallery-btn" data-target="gallery-<%= key.split(" ").join("-") %>"><i class="fa-solid fa-angle-up"></i></button>
+                            </div>
+                            <div class="gallery-<%= key.split(" ").join("-") %> gallery-cont">
+                            <% allFiles[key].forEach(elem => { %>
                                 <div class="gallery-img" onclick="">
-                                    <div class="gallery-img-overlay"><%= image.split(".").shift() %></div>
-                                    <img src="/gallery/<%= image %>" alt="Image">
+                                    <% if (elem.includes("-vid")) { %>
+                                        <video controls preload="metadata">
+                                            <source src="/gallery/<%= elem.split("-").slice(0, -1).join("-") %>" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    <% } else { %>
+                                        <div class="gallery-img-overlay"><%= elem.split("-").shift() %></div>
+                                        <img src="/gallery/<%= elem %>" alt="key">
+                                    <% } %>
                                 </div>
                             <% }) %>
-                        </div>
-                        <div class="gallery-title">
-                            <h1>Videos</h1>
-                            <button class="gallery-btn" data-target="gallery-videos"><i class="fa-solid fa-angle-up"></i></button>
-                        </div>
-                       <div class="gallery-videos">
-                            <% videos.forEach((video) => { %>
-                                <div class="gallery-img">
-                                <video controls preload="metadata">
-                                    <source src="/gallery/<%= video %>" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                            <% }) %>
-                       </div>
+                            </div>
+                        <% } %>
+                        
                     <% } else { %>
                         <div class="no-gallery">
                             GALLERY SEEMS TO BE EMPTY
@@ -76,7 +72,8 @@
     <%- include('partials/contact') %>
 </body>
 <script src="/scripts/common.js"></script>
-<% if (!(images.length || videos.length)) { %>
+
+<% if (Object.keys(allFiles).length === 0) { %>
  <script>
     attachAlert("Error Loading Gallery", "error");
  </script>

@@ -61,15 +61,14 @@
     overflow: hidden;
 }
 
-.gallery-images,
-.gallery-videos {
+.gallery-cont {
     width: 100%;
-    column-count: 3;
-    column-gap: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.gallery-images.collapsed,
-.gallery-videos.collapsed {
+.collapsed {
     height: 0;
     overflow: hidden;
 }
@@ -86,6 +85,7 @@
 
 .gallery-title h1 {
     color: white;
+    text-transform: capitalize;
 }
 
 .gallery-title button {
@@ -100,9 +100,8 @@
 
 .gallery-img {
     position: relative;
-    width: 100%;
+    width: var(--gallery-width);
     overflow: hidden;
-    margin-bottom: 20px;
 }
 
 .gallery-img-overlay {

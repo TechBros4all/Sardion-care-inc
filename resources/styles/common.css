@@ -19,6 +19,7 @@ html {
 }
 
 :root {
+    --gallery-width: 30%;
     --body-bg: black;
     --tomato: #CC2F46;
     --green: #004D55;
