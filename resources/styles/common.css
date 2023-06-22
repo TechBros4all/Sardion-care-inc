@@ -31,7 +31,7 @@ html {
 /*Give space for navbar*/
 body {
     padding-top: 70px;
-    padding-bottom: 60vh;
+    padding-bottom: 70vh;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -415,7 +415,7 @@ body.stop {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 60vh;
+    height: 70vh;
     width: 100%;
     background: url(/images/contact-bg.jpg) left no-repeat;
     z-index: 1;

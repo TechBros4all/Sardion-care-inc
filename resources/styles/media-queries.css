@@ -47,9 +47,17 @@
 }
 
 @media (max-width: 500px) {
+    body {
+        padding-bottom: 85vh;
+    }
+
     .alert-box {
         right: 20px;
         max-width: calc(100% - 40px);
+    }
+
+    .contact-holder {
+        height: 85vh;
     }
 
     .contact {
@@ -96,7 +104,7 @@
 
 @media (max-width: 440px) {
     .page {
-        padding: 100px 18px 50px;
+        padding: 100px 25px 50px;
     }
 }
 
