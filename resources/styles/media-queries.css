@@ -48,7 +48,7 @@
 
 @media (max-width: 500px) {
     body {
-        padding-bottom: 81vh;
+        /* padding-bottom: 81vh; */
     }
 
     .alert-box {
@@ -57,7 +57,7 @@
     }
 
     .contact-holder {
-        height: 81vh;
+        /* height: 81vh; */
     }
 
     .contact {
