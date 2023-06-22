@@ -47,18 +47,12 @@
 }
 
 @media (max-width: 500px) {
-    body {
-        /* padding-bottom: 81vh; */
-    }
 
     .alert-box {
         right: 20px;
         max-width: calc(100% - 40px);
     }
 
-    .contact-holder {
-        /* height: 81vh; */
-    }
 
     .contact {
         padding-top: 20px;
@@ -116,5 +110,15 @@
     .navbar-collapsable {
         padding: 20px;
         border-radius: 10px;
+    }
+}
+
+@media (max-width: 290px) {
+    body {
+        padding-bottom: 81vh;
+    }
+
+    .contact-holder {
+        height: 81vh;
     }
 }
