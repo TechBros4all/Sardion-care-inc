@@ -42,7 +42,7 @@
                             <% allFiles[key].forEach(elem => { %>
                                 <div class="gallery-img" onclick="">
                                     <% if (elem.includes("-vid")) { %>
-                                        <video controls preload="metadata">
+                                        <video controls preload="metadata" muted>
                                             <source src="/gallery/<%= elem.split("-").slice(0, -1).join("-") %>" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
