@@ -376,6 +376,10 @@ body {
 }
 
 @media (max-width: 300px) {
+    .hero-text h2 {
+        font-size: 30px;
+    }
+
     .believes {
         min-height: 100vh;
     }
