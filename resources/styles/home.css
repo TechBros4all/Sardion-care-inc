@@ -226,12 +226,13 @@ body {
     height: 100%;
     display: flex;
     /* gap: 20px; */
-    row-gap: 20px;
-    column-gap: 20px;
+    /* row-gap: 20px;
+    column-gap: 20px; */
     transition: 0.5s;
 }
 
 .service {
+    margin-right: 20px;
     position: relative;
     height: 100%;
     background-color: black;
