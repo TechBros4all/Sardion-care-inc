@@ -226,8 +226,8 @@ body {
     height: 100%;
     display: flex;
     /* gap: 20px; */
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
+    row-gap: 20px;
+    column-gap: 20px;
     transition: 0.5s;
 }
 
