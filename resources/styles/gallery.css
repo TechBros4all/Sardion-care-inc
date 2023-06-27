@@ -98,13 +98,13 @@
 }
 
 .gallery-img {
-    margin: 0 var(--gallery-margin);
+    margin: var(--gallery-margin);
     position: relative;
     width: var(--gallery-width);
     overflow: hidden;
 }
 
-.gallery-img-overlay {
+/* .gallery-img-overlay {
     padding: 20px;
     position: absolute;
     width: 100%;
@@ -120,7 +120,7 @@
     text-transform: uppercase;
     text-align: center;
     z-index: 2;
-}
+} */
 
 .gallery-box video,
 .gallery-box img {
@@ -128,13 +128,13 @@
     transition: 0.5s;
 }
 
-.gallery-img:hover img {
+/* .gallery-img:hover img {
     transform: scale(1.2);
-}
+} */
 
-.gallery-img:hover .gallery-img-overlay {
+/* .gallery-img:hover .gallery-img-overlay {
     opacity: 1;
-}
+} */
 
 .no-gallery {
     width: 100%;
