@@ -42,7 +42,7 @@
 
 @media (max-width: 600px) {
     :root {
-        --gallery-width: calc(50% - 10px);
+        --gallery-width: calc(50% - (var(--gallery-margin) * 2));
     }
 }
 
@@ -104,7 +104,7 @@
 
 @media (max-width: 400px) {
     :root {
-        --gallery-width: 100%;
+        --gallery-width: calc(100% - (var(--gallery-margin) * 2));
     }
 
     .navbar-collapsable {

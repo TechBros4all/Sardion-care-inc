@@ -19,7 +19,8 @@ html {
 }
 
 :root {
-    --gallery-width: 30%;
+    --gallery-margin: 10px;
+    --gallery-width: calc(33% - (var(--gallery-margin) * 2));
     --body-bg: black;
     --tomato: #CC2F46;
     --green: #004D55;

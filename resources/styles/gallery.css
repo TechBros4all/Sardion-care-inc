@@ -67,10 +67,6 @@
     flex-wrap: wrap;
 }
 
-.gallery-cont>* {
-    margin: 20px;
-}
-
 .collapsed {
     height: 0;
     overflow: hidden;
@@ -102,6 +98,7 @@
 }
 
 .gallery-img {
+    margin: 0 var(--gallery-margin);
     position: relative;
     width: var(--gallery-width);
     overflow: hidden;
