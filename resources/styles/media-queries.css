@@ -47,6 +47,13 @@
 }
 
 @media (max-width: 500px) {
+    body {
+        padding-bottom: 75vh;
+    }
+
+    .contact-holder {
+        height: 75vh;
+    }
 
     .alert-box {
         right: 20px;
