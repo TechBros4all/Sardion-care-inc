@@ -159,7 +159,7 @@ if (form) {
 
   form.addEventListener("submit", function (e) {
     try {
-      const url = "https://formspree.io/f/xzbqkbzv";
+      const url = "https://formspree.io/f/meqbqjjn"
 
       e.preventDefault();
 
