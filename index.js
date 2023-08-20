@@ -16,6 +16,12 @@ app.get("/sitemap.xml", (req, res) => {
     res.sendFile(filePath);
 });
 
+// error pages/handlers
+app.use((req, res)=>{
+    res.render('error')
+});
+
+
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
 })
