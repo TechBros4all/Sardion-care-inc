@@ -54,8 +54,13 @@ body {
     background-color: var(--light-brown);
 }
 
-.hero-text p {
+.hero-text p ul li {
     font-size: 17px;
+}
+
+.hero-text p ol li{
+    list-style: none;
+    list-style: disc;
 }
 
 .hero-text a {
@@ -128,7 +133,7 @@ body {
 
 .believes {
     position: relative;
-    min-height: 50vh;
+    min-height: 60vh;
     background: url(/images/believes.jpg) no-repeat;
     background-attachment: fixed;
     background-position: center;

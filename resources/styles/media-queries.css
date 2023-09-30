@@ -10,6 +10,10 @@
         background-attachment: initial;
     }
 
+    .hero-text ul li {
+        font-size: 15px;
+    }
+
     .head {
         font-size: 20px;
     }
@@ -38,21 +42,49 @@
         margin: 20px 0;
         font-size: 16px;
     }
+
+    .contact-holder {
+        height: 85vh;
+    }
+
+    .contact-made-left {
+        bottom: 10%;
+    }
 }
 
 @media (max-width: 600px) {
     :root {
         --gallery-width: calc(50% - (var(--gallery-margin) * 2));
     }
+
+    .hero-text ul li {
+        font-size: 14px;
+    }
+
+    .contact-holder {
+        height: 85vh;
+    }
+
+    .contact-made-left {
+        bottom: 10%;
+    }
 }
 
 @media (max-width: 500px) {
     body {
-        padding-bottom: 75vh;
+        padding-bottom: 120vh;
+    }
+
+    .hero-text ul li {
+        font-size: 12px;
     }
 
     .contact-holder {
-        height: 75vh;
+        height: 120vh;
+    }
+
+    .contact-made-left {
+        bottom: 8%;
     }
 
     .alert-box {
@@ -105,7 +137,11 @@
 
 @media (max-width: 440px) {
     .page {
-        padding: 100px 25px 50px;
+        padding: 25px 25px 50px;
+    }
+
+    .head p {
+        font-size: 13px;
     }
 }
 
@@ -121,11 +157,26 @@
 }
 
 @media (max-width: 290px) {
+    .hero-text h2 {
+        font-size: 25px;
+    }
     body {
-        padding-bottom: 81vh;
+        padding-bottom: 100vh;
     }
 
     .contact-holder {
-        height: 81vh;
+        height: 125vh;
+    }
+    
+    .contact-made-left {
+        bottom: 5%;
+    }
+
+    .head p {
+        font-size: 13px;
+    }
+
+    .hero-text ul li {
+        font-size: 10px;
     }
 }
