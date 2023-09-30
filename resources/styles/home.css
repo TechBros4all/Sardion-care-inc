@@ -54,13 +54,15 @@ body {
     background-color: var(--light-brown);
 }
 
-.hero-text p ul li {
-    font-size: 17px;
+.hero-text ul li {
+    font-size: 15px;
+    padding-bottom: 10px;
+    list-style-type: none;
 }
 
-.hero-text p ol li{
-    list-style: none;
-    list-style: disc;
+.hero-text ul li::marker {
+    color: var(--tomato);
+    content: "▶  ";
 }
 
 .hero-text a {

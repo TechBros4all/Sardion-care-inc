@@ -416,10 +416,26 @@ body.stop {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 70vh;
+    height: 75vh;
     width: 100%;
     background: url(/images/contact-bg.jpg) left no-repeat;
     z-index: 1;
+}
+
+.contact-made-left {
+    position: absolute;
+    padding: 10px;
+    bottom: 0%;
+    width: 100%;
+    right: 0%;
+}
+
+.contact-made-left {
+    color: rgb(201, 200, 200);
+}
+
+.contact-made-left p span{
+    color:#b49c8c;
 }
 
 .contact-made {
